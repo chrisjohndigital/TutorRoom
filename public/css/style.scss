@@ -1,0 +1,96 @@
+@charset "utf-8";
+$fontfamily: Arial, Helvetica, sans-serif;
+$fontsize: 0.9em;
+$linkcolor: #4789ec;
+$defwidth: 1280px;
+$defheight: 720px;
+$deflineheight: 80px;
+$defpadding: 10px;
+$thumbwidth: $defwidth/8;
+$thumbheight: $defheight/8;
+$dropwidth: 100px;
+$thumbtop: 600px;
+$addresswidth: 54px;
+$addressheight: 38px;
+$filewidth: 100px;
+$fileheight: 75px;
+
+$mailicon: '../images/icon-mail.png';
+$dropicon: '../images/drop-file.png';
+$downloadicon: '../images/icon-download.png';
+$playicon: '../images/icon-play.png';
+$rewindicon: '../images/icon-rewind.png';
+$recordicon: '../images/icon-record.png';
+$cancelicon: '../images/icon-cancel.png';
+
+$black: black;
+$opacity: 0.7;
+$btncolor: #f3f3f3;
+$sqcolor: rgba(255, 255, 255, 0.8);
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin set-border($amount) {
+  border:$amount solid white;
+}
+@mixin set-background($url, $direction) {
+    background-image:$url;
+    background-position: $direction; 
+    background-repeat: no-repeat;
+}
+@mixin set-transition($amount) {
+    -webkit-transition: $amount; 
+    -moz-transition: $amount; 
+    -o-transition: $amount; 
+    transition: $amount
+}
+@-webkit-keyframes pulse{
+	0%{background-color:red}
+	25%{background-color:white}
+	50%{background-color:red}
+	100%{background-color:white}
+}
+@keyframes pulse{
+	0%{background-color:red}
+	25%{background-color:white}
+	50%{background-color:red}
+	100%{background-color:white}
+}
+
+body {font-family: $fontfamily; font-size: $fontsize; padding:0px; margin:0px; overflow-x:hidden}
+a {color:$linkcolor; text-decoration: none}
+a:hover {text-decoration:underline}
+
+.container{position:relative; width:$defwidth; height:$defheight+$deflineheight; margin:0px auto 0px auto; text-align:center}
+
+video {width:$defwidth; height:$defheight; margin:0px; padding:0px; background-color:$black; @include set-transition(all 1s)}
+video#playback, video#remote {display:none}
+
+.remote, .thumbnails, .thumbnail, .placeholder {width:$thumbwidth; height:$thumbheight}
+.remote, .thumbnails, .placeholder {position:absolute}
+.remote {top:$defpadding; left:$defpadding; @include set-border(1px); cursor: pointer}
+.thumbnails {@include set-border(1px); z-index: 10;  left:$defpadding*2; top:$thumbtop; display:none; filter: grayscale(70%); -webkit-filter: grayscale(70%)}
+.placeholder {@include set-background(url($downloadicon), center); top:0px; pointer-events: none}
+
+
+.address-bar {position:absolute; min-height:$deflineheight/2; top:$defpadding; right: $defpadding; display:none; @include set-background(url($mailicon), right); background-size: $addresswidth $addressheight; text-align:right; background-color: $sqcolor}
+.address-bar p {line-height:$deflineheight/2; margin:0px $defpadding*6 0px $defpadding}
+
+.file-drop {width:$dropwidth; height:$dropwidth; @include set-border(1px); position:absolute; right:$defpadding*2; top:$thumbtop; display:none; @include border-radius($defpadding)}
+.file-drop p {margin-top:$defpadding/2}
+.file-drop a {color:white}
+.file-ready {@include set-background(url($dropicon), center); background-size: $filewidth $fileheight}
+.file-received {@include set-background(url($downloadicon), center); background-size: $deflineheight $deflineheight; background-color: $black; opacity:$opacity}
+
+.menu {width:$defwidth; height:$deflineheight; line-height:$deflineheight; margin:auto; display:none}
+
+button {width:$deflineheight; height:$deflineheight; background-color:$btncolor; border:none; cursor:pointer; margin:auto; padding:0px; display:none}
+button:hover {background-color:$black}
+.btn-pulse{-webkit-animation:pulse 1s infinite; animation:pulse 1s infinite}
+#btn-rewind {@include set-background(url($rewindicon), center)}
+#btn-record {@include set-background(url($recordicon), center)}
+#btn-cancel {@include set-background(url($cancelicon), center)}
