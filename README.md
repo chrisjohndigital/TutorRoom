@@ -5,7 +5,7 @@ Node.js HTML5 video capture, peer-to-peer video and filesharing application
 
 ##About
 
-Interested in developing online collaborative learning spaces or building a language lab, TutorRoom will help get you started.
+Interested in developing multi-threaded synchronous collaborative learning spaces or building a language lab, TutorRoom will help get you started.
 
 ##Features
 
