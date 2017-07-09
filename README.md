@@ -3,17 +3,19 @@ TutorRoom
 
 Node.js HTML5 video capture, peer-to-peer video and filesharing application
 
-##About
+![Image representing TutorRoom](public/images/tutorroom.jpg?raw=true "Image representing TutorRoom")
+
+## About
 
 Interested in developing multi-threaded synchronous collaborative learning spaces or building a language lab, TutorRoom will help get you started.
 
-##Features
+## Features
 
 HTML5 video recording and download
 Peer-to-peer video communication
 Peer-to-peer filesharing
 
-##Platform
+## Platform
 
 [WebRTC](https://developer.mozilla.org/en-US/docs/Web/Guide/API/WebRTC)
 
