@@ -11,9 +11,11 @@ Interested in developing multi-threaded synchronous collaborative learning space
 
 ## Features
 
-HTML5 video recording and download
-Peer-to-peer video communication
-Peer-to-peer filesharing
+1) HTML5 video recording and download
+
+2) Peer-to-peer video communication
+
+3) Peer-to-peer filesharing
 
 ## Platform
 
