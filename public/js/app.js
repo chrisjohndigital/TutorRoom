@@ -570,7 +570,9 @@ var CameraView = Backbone.View.extend({
 			};
             var device = navigator.mediaDevices.getUserMedia({audio: this.model.get('includeAudio'), video: video_constraints});
             device.then(function(mediaStream) {
-                $(viewReference.el).attr('src', window.URL.createObjectURL(mediaStream));
+                //$(viewReference.el).attr('src', window.URL.createObjectURL(mediaStream));//Deprecated
+                (viewReference.el).srcObject = mediaStream;
+                //document.getElementById('camera').srcObject = mediaStream; //Alternative                
 				viewReference.model.set({localStream: mediaStream });
             });
             device.catch(function(err) {
