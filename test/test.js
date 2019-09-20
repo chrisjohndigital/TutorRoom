@@ -10,7 +10,7 @@ var options ={
 //Mocha dependencies
 var express = require('express');
 var io = require('socket.io-client');
-//Add token
+//Add token, can use the same token as being previewed in the browser if you wish
 var token = '';
 //Add token
 var file='123456789';

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "mocha"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -11,11 +12,11 @@
     "debug": "~>2.6.9",
     "ejs": "~>2.5.5",
     "express": "^4.16.3",
-    "morgan": "^1.9.0",
+    "morgan": "^1.9.1",
     "serve-favicon": "^2.5.0",
-    "socket.io": "^1.4.5"
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
-    "mocha": "^2.4.5"
+    "mocha": "^6.2.0"
   }
 }
